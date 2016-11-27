@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>多重认证管理系统</title>
+
+  <script src="/statics/js/echarts.js"></script>
+  <script src="/statics/js/jquery.js"></script>
+  <link href="/statics/css/bootstrap.css" rel="stylesheet">
+  <script src="/statics/js/bootstrap.min.js"></script>
+  
+
+  <script>
+  function ajax(_url, _tag, _way, _form)
+  {
+    var m = (typeof(_way)  ==  "undefined" ? "GET" :_way );
+    var par = (typeof(_form)  ==  "undefined" ? "" :$(_form).serialize());
+
+    $.ajax({
+      type:m,
+      url:_url,
+      data:par,
+      async: false,
+      error: function(request) {
+        alert("Connection error");
+      },
+      success: function(data) {
+        $(_tag).html(data);
+      }
+    });
+    return false;
+  }       
+  </script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <h3 class="text-center">
+          多重认证管理系统
+        </h3>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">
+        <ul class="nav nav-list">
+          <li class="nav-header">
+            机房
+          </li>
+          <li>
+            机房1
+          </li>
+          <li>
+            机房2
+          </li>
+        </ul>
+      </div>
+      <div class="span8">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="tabbable" id="tabs-775584">
+              <ul class="nav nav-tabs">
+                <li>
+                  <a data-toggle="tab" href="#panel-300860">实时</a>
+                </li>
+                <li class="active">
+                  <a data-toggle="tab" href="#panel-23319">历史</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane" id="panel-300860">
+                  <p>
+                    实时部分内容.
+                  </p>
+                </div>
+                <div class="tab-pane active" id="panel-23319">
+                  <p>
+                    历史部分内容.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
