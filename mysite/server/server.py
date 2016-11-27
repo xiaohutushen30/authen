@@ -1,10 +1,9 @@
 # -*- coding: UTF-8 -*-
 import socket
-import requests
 #socket通信客户端
 def server():
     ser=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    ser.bind(('127.0.0.1',48888))
+    ser.bind(('127.0.0.1',6789))
     ser.listen(5)
     while 1:
         client,addr=ser.accept()
