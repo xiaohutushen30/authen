@@ -28,5 +28,6 @@ def comput_room_status(request):
     return HttpResponse("ok")
 
 def jifang(request):
+    ###
 	# return HttpResponse("sdfasfasfa")
 	return render_to_response('authen/jifang.html',{},context_instance=RequestContext(request))
