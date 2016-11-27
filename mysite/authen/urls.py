@@ -4,5 +4,5 @@ from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
     url(r'^index/$','authen.views.index'),
-    url(r'^api/cr_status/$','authen.views.comput_room_status'),
+    # url(r'^delete_uploadfile/$','fontlib.UserAndRole.views.profile_delte'),
 )
