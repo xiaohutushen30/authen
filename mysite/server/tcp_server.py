@@ -1,15 +1,17 @@
 # -*- coding: UTF-8 -*-
 import socket
+import requests
 #socket通信客户端
-def client():
-    mysocket=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    mysocket.connect(('127.0.0.1',6789))
-    mysocket.send('hello')
+def server():
+    ser=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    ser.bind(('127.0.0.1',48888))
+    ser.listen(5)
     while 1:
-        data=mysocket.recv(1024)
-        if data:
-           print data
-        else:
-            break
-    mysocket.close()
-client()
+        client,addr=ser.accept()
+        print 'accept %s connect'%(addr,)
+        data=client.recv(1024)
+        print data
+        client.send('get')
+        client.close()
+
+server()

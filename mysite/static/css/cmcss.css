@@ -1,1 +1,6 @@
+@charset "utf-8";
+ul,li,dl,ul,ol{list-style:none;}
+div,li,td,th{line-height:24px;font-size:12px;white-space:normal;word-break:break-all;}
 div{line-height:20px;}
+.tableJf th,td{border:1px solid #efefef;text-align: center;}
+.pagination a{border:1px solid #5978a4;height:30px;line-height: 30px;background-color: #ffffff;width:20px;font-size: 16px;font-weight: bold;padding-left:10px;padding-right:10px;margin-right: 10px;}

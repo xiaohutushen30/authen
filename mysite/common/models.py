@@ -17,11 +17,11 @@ class ComputerRoom(models.Model):
     class Meta:
         db_table = 'ComputerRoom'
 
-class ComputerRoomStattus(models.Model):
+class ComputerRoomStatus(models.Model):
     id = models.BigIntegerField(primary_key=True)
     computerroomid = models.BigIntegerField(null=True, db_column='ComputerRoomId', blank=True)
     personid = models.BigIntegerField(null=True, db_column='PersonId', blank=True)
     entrytime = models.DateTimeField(null=True, db_column='EntryTime', blank=True)
     outtime = models.DateTimeField(null=True, db_column='OutTime', blank=True)
     class Meta:
-        db_table = 'ComputerRoomStattus'
+        db_table = 'ComputerRoomStatus'
