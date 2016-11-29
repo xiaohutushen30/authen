@@ -12,6 +12,7 @@ while True:
     if not data:
         break;
     UDPcliSocket.sendto(data,ADDR)
+    # UDPcliSocket.settimeout(3)
     datarecv,addr = UDPcliSocket.recvfrom(BUFFSIZE)
     if not datarecv:
         break

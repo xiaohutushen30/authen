@@ -42,7 +42,8 @@ class UdpServer(object):
         elif date_style == "03":
             self.process_data(addr,data)
         else:
-            print "data style error"
+            msg = "data style error"
+            self.UDPSerSocket.sendto('[%s]:%s'%(time.ctime(),msg),addr)
             return
 
     def process_time(self,addr,data):
@@ -84,11 +85,11 @@ class UdpServer(object):
             "status":status,
             "date":date,
         }
-        re = requests.post(url=self.api_url, data=data)
+        re = requests.post(url=self.api_url, data=http_data)
         if re.status_code == 200:
-            self.UDPSerSocket.sendto("ok",addr)
+            self.UDPSerSocket.sendto(re.text,addr)
         else:
-            self.UDPSerSocket.sendto(re.status_code,addr)
+            self.UDPSerSocket.sendto(str(re.status_code),addr)
     def close_server(self):
         self.UDPSerSocket.close()
         self.UDPSerSocket = None
