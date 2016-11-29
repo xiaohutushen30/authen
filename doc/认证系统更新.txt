@@ -1,0 +1,12 @@
+1.进入到authen目录下 在目录下执行git pull更新代码
+2.在mysite目录下更新数据库分别执行如下命令：
+python manage.py syncdb
+python manage.py makemigrations
+python manage.py migrate
+3.启动服务
+python manage.py migrate
+4.启动udp服务端
+5.启动udp客户端在客户端中发送如下消息：
+时间同步请求：464B01211FFFF7F01FFFF7E8
+人员信息：464B03211FFFF7F01FFFF7E80111112222333344445555666601100B1B07120000
+6.访问页面 看上传的信息是否能显示
